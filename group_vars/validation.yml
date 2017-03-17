@@ -1,0 +1,6 @@
+---
+# Ansible demo
+
+username: uservalid
+userpass: sigfoxvalid
+infra: validation

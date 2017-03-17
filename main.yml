@@ -1,0 +1,9 @@
+---
+# Ansible Demo
+# 3 steps :
+# Créer un user
+# Déployer un fichier
+# Déployer un programme
+- include: create-user.yml
+- include: deploy-file.yml
+- include: deploy-application.yml

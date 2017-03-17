@@ -1,0 +1,12 @@
+---
+# Ansible demo
+# On déploie le fichier de properties sur toutes les cibles
+- hosts: web:db
+  
+  tasks:
+    # On s'assure que le dossier /etc/monprojet/ existe bien, sinon on le créer
+    - name: Ensures /etc/monprojet dir exists
+      file: path=/etc/monprojet state=directory owner={{ username }} mode=0775 recurse=yes
+    # Copie le fichier de configuration
+    - name: application.properties template
+      template: src=templates/application.properties dest=/etc/monprojet/application.properties owner={{ username }} mode=0775

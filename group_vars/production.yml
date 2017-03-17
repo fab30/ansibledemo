@@ -1,0 +1,6 @@
+---
+# Ansible demo
+
+username: userprod
+userpass: sigfoxprod
+infra: production

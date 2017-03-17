@@ -1,0 +1,11 @@
+---
+# Ansible demo
+# On déploie l'utilisateur sur toutes les cibles
+- hosts: web:db
+  
+  tasks:
+    # Create an user with username and password in parameter
+    - user:
+        name: "{{ username }}"
+        password: "{{ userpass }}"
+        comment: "My user"
