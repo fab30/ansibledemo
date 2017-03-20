@@ -2,8 +2,8 @@
 # Ansible demo
 # On déploie l'application sur les cibles de type web
 - hosts: web
-  
+  become: yes
   tasks:
     # On copie que le fichier sh dans /usr/bin, et on le rend executable
-    - name: application.properties template
-      copy: src=files/myapplication.sh dest=/user/bin/ owner={{ username }} mode=777
+    - name: myapplication.sh copy
+      copy: src=files/myapplication.sh dest=/usr/bin/ owner={{ username }} mode=777

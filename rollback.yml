@@ -1,0 +1,23 @@
+---
+# Ansible demo
+# On rollback toutes les opérations
+- hosts: web:db
+  become: yes  
+  tasks:
+    # remove an user and group
+    - user:
+        name: "{{ username }}"
+        state: absent
+        remove: yes
+    - group:
+        name: "{{ username }}"
+        state: absent
+    - name: Remove application
+      file:
+        state: absent
+        path: "/usr/bin/myapplication.sh"
+    - name: Remove properties
+      file:
+        state: absent
+        path: "/etc/monprojet"
+

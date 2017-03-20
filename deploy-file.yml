@@ -2,7 +2,7 @@
 # Ansible demo
 # On déploie le fichier de properties sur toutes les cibles
 - hosts: web:db
-  
+  become: yes  
   tasks:
     # On s'assure que le dossier /etc/monprojet/ existe bien, sinon on le créer
     - name: Ensures /etc/monprojet dir exists

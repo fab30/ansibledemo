@@ -2,10 +2,14 @@
 # Ansible demo
 # On déploie l'utilisateur sur toutes les cibles
 - hosts: web:db
-  
+  become: yes 
   tasks:
     # Create an user with username and password in parameter
+    - group: 
+        name:  "{{ username }}"
+        state: present
     - user:
         name: "{{ username }}"
         password: "{{ userpass }}"
+        group: "{{ username }}"
         comment: "My user"
